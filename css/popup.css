@@ -54,6 +54,7 @@ body {
 }
 a.new:active { color: #7FAC53 !important }
 #notifications .friends .icon { background-position: 0px -33px }
+#notifications .friendsRequest .icon { background-position: 0px -1758px }
 #notifications .messages .icon { background-position: 0px -330px }
 #notifications .comments .icon { background-position: 0px -132px }
 #notifications .tags .icon { background-position: 0px -231px }

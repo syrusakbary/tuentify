@@ -1,7 +1,7 @@
 {
   "name": "Tuentify",
-  "description" : "Te avisa al instante de las notificaciones de Tuenti.",
-  "version": "2.0",
+  "description" : "Te avisa al instante de tus notificaciones pendientes en Tuenti y agiliza la carga de la página.",
+  "version": "2.3",
   "icons": {
     "16": "images/icon16.png",
     "32": "images/icon32.png",

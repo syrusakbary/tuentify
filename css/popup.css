@@ -1,0 +1,68 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+    line-height: 16px;
+}
+a { color: #36679F }
+a:hover { text-decoration: underline }
+a img {
+    border: 1px solid #DDD;
+    padding: 1px;
+    color: #CCC;
+    background-color: white;
+}
+a:hover img { border-color: #999 }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    min-width: 200px;
+    padding: 10px;
+}
+#notifications { color: #8A8A8A }
+#notifications li {
+    color: #8A8A8A;
+    margin-top: 3px;
+    min-height: 16px;
+    line-height: 16px;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    padding-left: 14px;
+    position: relative;
+}
+#notifications .icon {
+    background: url(../images/content_icons.png) no-repeat 0 100px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+.new,
+.new a {
+    color: #549019;
+    font-weight: bold;
+    line-height: 14px;
+}
+a.new:active { color: #7FAC53 !important }
+#notifications .friends .icon { background-position: 0px -33px }
+#notifications .messages .icon { background-position: 0px -330px }
+#notifications .comments .icon { background-position: 0px -132px }
+#notifications .tags .icon { background-position: 0px -231px }
+#notifications .status .icon { background-position: 0px -1862px }
+#notifications .events .icon { background-position: 0px -429px }
+#notifications .pages .icon { background-position: 0px -1353px }
+#notifications .tags_thumbs a {
+    display: inline-block;
+    height: auto;
+    margin: 3px 3px 0 0;
+    vertical-align: top;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/popup.css" />
+
+	<script>
+		var bg = chrome.extension.getBackgroundPage();
+	</script>
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.tmpl.js"></script>
+	<script src="js/popup.js"></script>
+
+</head>
+<body>
+<script id="unread_friend_messages-template" type="text/x-jquery-tmpl">
+	<li class="messages">
+	<span class="icon"></span>
+    <a href="http://www.tuenti.com/#m=Message&func=index" title="Ver tus mensajes" class="new">${count} {{if singular}}mensaje privado{{else}}mensajes privados{{/if}}</a>
+    </li>
+</script>
+<script id="unread_spam_messages-template" type="text/x-jquery-tmpl">
+	<li class="messages">
+	<span class="icon"></span>
+    <a href="http://www.tuenti.com/#m=Message&func=index&boxName=spambox" title="Ver mensajes de desconocidos" class="new">${count} {{if singular}}mensaje de un desconocido{{else}}mensajes de desconocidos{{/if}}</a>
+    </li>
+</script>
+<script id="new_profile_wall_posts-template" type="text/x-jquery-tmpl">
+	<li class="comments">
+	<span class="icon"></span>
+    <a href="http://www.tuenti.com/#m=Profile&func=index" title="Ver tu perfil" class="new">${count} {{if singular}}comentario{{else}}comentarios{{/if}}</a>
+    </li>
+</script>
+<script id="new_friend_requests-template" type="text/x-jquery-tmpl">
+	<li>
+	<span class="icon"></span>
+    <a href="http://www.tuenti.com/#m=Requestmanagement&func=index" title="Ver tus mensajes" class="new">${count} {{if singular}}petición de amigo{{else}}peticiones de amigos{{/if}}
+    </li>
+</script>
+<script id="accepted_friend_requests-template" type="text/x-jquery-tmpl">
+	<li class="friends">
+	<span class="icon"></span>
+    {{tmpl(friends) "#accepted_friends-template" }}
+    </li>
+</script>
+<script id="accepted_friends-template" type="text/x-jquery-tmpl">
+    <a href="http://www.tuenti.com/#m=Profile&func=index&user_id=${user_id}" title="Ver el perfil de ${name}" class="new">${name}</a> se ha unido<br>
+</script>
+<script id="new_photo_wall_posts-template" type="text/x-jquery-tmpl"> 
+	<li class="comments">
+	<span class="icon"></span>
+    <a href="http://www.tuenti.com/#m=Albums&func=index&collection_key=6" title="Ver fotos" class="new">${count} {{if singular}}foto{{else}}fotos{{/if}} con comentarios</a>
+    </li>
+</script>
+<script id="new_tagged_photos-template" type="text/x-jquery-tmpl"> 
+	<li class="tags">
+	<span class="icon"></span>
+    <a href="http://www.tuenti.com/#m=Albums&func=index&collection_key=5" class="new" title="Ver tus fotos etiquetadas">${count} {{if singular}}etiqueta{{else}}etiquetas{{/if}}</a>
+    </li>
+</script>
+<script id="photos-template" type="text/x-jquery-tmpl"> 
+    <a href="http://www.tuenti.com/#m=Photo&func=view_photo&collection_key=5-_-${photo_id}" title="Ver foto"><img src="${photo_url_100}" /></a>
+</script>
+
+<script id="new_event_invitations-template" type="text/x-jquery-tmpl"> 
+	<li class="events">
+	<span class="icon"></span>
+    <a href="http://www.tuenti.com/#m=Requestmanagement&func=index&rt=Event" title="Ver invitaciones a eventos" class="new">${count} {{if singular}}invitación a un evento{{else}}invitaciones a eventos{{/if}}</a>
+    </li>
+</script>
+<script id="new_group_page_invitations-template" type="text/x-jquery-tmpl"> 
+	<li class="pages">
+ 	<span class="icon"></span>
+    <a href="http://www.tuenti.com/#m=Requestmanagement&func=index&rt=Page" title="Ver invitaciones a páginas" class="new">${count} {{if singular}}invitación a una página{{else}}invitaciones a páginas{{/if}}</a>
+    </li>
+</script>
+<script id="group_admin_promotions-template" type="text/x-jquery-tmpl"> 
+	<li>
+	<span class="icon"></span>
+    ${count} {{if singular}}promoción{{else}}promociones{{/if}}
+    </li>
+</script>
+<script id="group_member_promotions-template" type="text/x-jquery-tmpl"> 
+	<li>
+	<span class="icon"></span>
+    ${count} {{if singular}}promoción{{else}}promociones{{/if}}
+    </li>
+</script>
+<script id="new_profile_wall_comments-template" type="text/x-jquery-tmpl"> 
+	<li class="status">
+	<span class="icon"></span>
+    <a href="http://www.tuenti.com/#m=Home&func=index" class="new">${count} {{if singular}}estado{{else}}estados{{/if}} con comentarios</a>
+    </li>
+</script>
+
+<div id="no-notifications">
+No tienes ninguna novedad.<br><a href="http://www.tuenti.com">Ir a Tuenti</a></div>
+<ul id="notifications">
+</ul>
+</body>
+</html>

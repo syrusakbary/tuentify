@@ -1,7 +1,7 @@
 {
   "name": "Tuentify",
-  "description" : "Te avisa al instante de las notificaciones pendientes de tu Tuenti: mensajes privados, comentarios en el tablón, eventos, etc.",
-  "version": "1.4",
+  "description" : "Te avisa al instante de las notificaciones de Tuenti.",
+  "version": "2.0",
   "icons": {
     "16": "images/icon16.png",
     "32": "images/icon32.png",
@@ -14,6 +14,13 @@
   ],
   "browser_action": {
       "name": "Haz click para ir a Tuenti",
-      "default_icon": "images/deactivated.png"
-  }
+      "default_icon": "images/deactivated.png",
+      "default_popup": "popup.html"
+  },
+  "content_scripts": [
+      {
+        "matches": ["*://*.tuenti.com/*"],
+        "js": ["js/faster.js"]
+      }
+   ]
 }

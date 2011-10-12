@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -80,6 +79,22 @@
     ${count} {{if singular}}promoción{{else}}promociones{{/if}}
     </li>
 </script>
+<script id="content-template" type="text/x-jquery-tmpl"> 
+	{{if logged}}
+		{{if notifications_count>0}}<ul id="notifications">
+			{{each(i, notification) notifications}}
+				${data = template_data(notification),''}
+				{{if data.count>0}}
+				{{tmpl(data) template_name(notification)}}
+				{{/if}}
+			{{/each}}</ul>
+		{{else}}
+			No tienes notificaciones pendientes.
+		{{/if}}
+	{{else}}
+		No has iniciado sesión, entra en <a href="http://www.tuenti.com/">Tuenti</a>
+	{{/if}}
+</script>
 <script id="group_member_promotions-template" type="text/x-jquery-tmpl"> 
 	<li>
 	<span class="icon"></span>
@@ -92,10 +107,10 @@
     <a href="http://www.tuenti.com/#m=Home&func=index" class="new">${count} {{if singular}}estado{{else}}estados{{/if}} con comentarios</a>
     </li>
 </script>
-
-<div id="no-notifications">
-No tienes ninguna novedad.<br><a href="http://www.tuenti.com">Ir a Tuenti</a></div>
-<ul id="notifications">
-</ul>
+<div class="head">
+	<a href="http://www.tuenti.com/#m=Home&func=index"><img src="images/logo.png" class="logo"></a>
+</div>
+<div class="content">
+</div>
 </body>
 </html>

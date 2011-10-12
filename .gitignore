@@ -1,2 +1,4 @@
 tuentify.esproj
 tuentify.zip
+*.sublime-*
+*.private.*
